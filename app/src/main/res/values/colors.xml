@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="emerald_500">#FF10B981</color>
+    <color name="emerald_600">#FF059669</color>
+    <color name="emerald_50">#FFECFDF5</color>
+    <color name="stone_50">#FFFAFAF9</color>
+    <color name="stone_100">#FFF5F5F4</color>
+    <color name="stone_200">#FFE7E5E4</color>
+    <color name="stone_400">#FFA8A29E</color>
+    <color name="stone_500">#FF78716C</color>
+    <color name="stone_600">#FF57534E</color>
+    <color name="stone_800">#FF292524</color>
+    <color name="stone_900">#FF1C1917</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="amber_400">#FFFBBF24</color>
+    <color name="red_500">#FFEF4444</color>
+    <color name="ic_launcher_background">#FF10B981</color>
+</resources>
