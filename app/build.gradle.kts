@@ -13,6 +13,15 @@ android {
     namespace = "com.calaratjada.insider"
     compileSdk = 35
 
+    signingConfigs {
+        create("release") {
+            storeFile = file(getSecret("KEYSTORE_FILE").ifEmpty { "../insider-release.jks" })
+            storePassword = getSecret("KEYSTORE_PASSWORD")
+            keyAlias = getSecret("KEY_ALIAS").ifEmpty { "insider-key" }
+            keyPassword = getSecret("KEY_PASSWORD")
+        }
+    }
+
     defaultConfig {
         applicationId = "com.calaratjada.insider"
         minSdk = 26
@@ -238,6 +247,7 @@ android {
 
     buildTypes {
         release {
+            signingConfig = signingConfigs.getByName("release")
             isMinifyEnabled = true
             isShrinkResources = true
             proguardFiles(

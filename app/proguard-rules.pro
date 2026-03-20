@@ -68,5 +68,19 @@
 -dontwarn io.bidmachine.**
 -dontwarn org.bidon.**
 
+# OK Tracer (Appodeal dependency) - fix R8 ConcurrentModificationException
+-keep class ru.ok.tracer.** { *; }
+-dontwarn ru.ok.tracer.**
+
+# Appodeal mediation service files
+-keep class META-INF.services.** { *; }
+-dontwarn META-INF.services.**
+
+# Fix R8 8.5.x ConcurrentModificationException in service loader processing
+-adaptresourcefilecontents META-INF/services/*
+-dontwarn javax.annotation.**
+-dontwarn org.codehaus.**
+-dontwarn com.squareup.moshi.**
+
 # WorkManager
 -keep class androidx.work.** { *; }

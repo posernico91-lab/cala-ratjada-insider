@@ -105,7 +105,7 @@ fun WeatherScreen(viewModel: WeatherViewModel = hiltViewModel()) {
             }
 
             uiState.weather != null -> {
-                val weather = uiState.weather!!
+                val weather = uiState.weather ?: return@LazyColumn
 
                 // Current weather
                 item {

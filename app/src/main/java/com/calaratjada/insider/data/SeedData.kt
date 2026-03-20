@@ -32,7 +32,7 @@ object SeedData {
                 description = poi.description,
                 lat = poi.lat,
                 lng = poi.lng,
-                imageUrl = categoryImages[poi.category] ?: categoryImages["culture"]!!,
+                imageUrl = categoryImages[poi.category] ?: categoryImages.getValue("culture"),
                 rating = poi.rating,
                 address = poi.address
             )

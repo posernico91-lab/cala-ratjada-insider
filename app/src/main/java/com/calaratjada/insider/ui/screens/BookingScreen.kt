@@ -26,32 +26,32 @@ import com.calaratjada.insider.ui.theme.*
 private enum class BookingTab(
     val label: String,
     val icon: ImageVector,
-    val widgetHtml: String
+    val widgetUrlTemplate: String
 ) {
     FLIGHTS(
         "Flüge",
         Icons.Default.Flight,
-        """
-        <div id="tp-widget"></div>
-        <script src="https://c137.travelpayouts.com/content?promo_id=4497&shmarker=&locale=de&currency=EUR"></script>
-        """
+        "https://c137.travelpayouts.com/content?promo_id=4497&shmarker=&locale={locale}&currency={currency}"
     ),
     CARS(
         "Mietwagen",
         Icons.Default.DirectionsCar,
-        """
-        <div id="tp-widget"></div>
-        <script src="https://c87.travelpayouts.com/content?promo_id=2466&shmarker=&locale=de&currency=EUR"></script>
-        """
+        "https://c87.travelpayouts.com/content?promo_id=2466&shmarker=&locale={locale}&currency={currency}"
     ),
     TOURS(
         "Touren",
         Icons.Default.ConfirmationNumber,
-        """
-        <div id="tp-widget"></div>
-        <script src="https://c112.travelpayouts.com/content?city_id=112144&shmarker=&locale=de&currency=EUR"></script>
-        """
-    )
+        "https://c112.travelpayouts.com/content?promo_id=4487&shmarker=&locale={locale}&currency={currency}"
+    );
+
+    fun getWidgetHtml(): String {
+        val locale = ActiveCountryConfig.defaultLocale.take(2)
+        val currency = ActiveCountryConfig.currencyCode
+        val url = widgetUrlTemplate
+            .replace("{locale}", locale)
+            .replace("{currency}", currency)
+        return """<div id="tp-widget"></div><script src="$url"></script>"""
+    }
 }
 
 @Composable
@@ -215,7 +215,7 @@ private fun BookingWebView(tab: BookingTab, modifier: Modifier = Modifier) {
             </style>
         </head>
         <body>
-            ${tab.widgetHtml}
+            ${tab.getWidgetHtml()}
         </body>
         </html>
     """.trimIndent()
