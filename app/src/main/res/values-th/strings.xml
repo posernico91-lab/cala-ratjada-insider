@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_home">หน้าแรก</string>
+    <string name="nav_map">แผนที่</string>
+    <string name="nav_search">ค้นหา</string>
+    <string name="nav_booking">จอง</string>
+    <string name="nav_weather">สภาพอากาศ</string>
+    <string name="category_all">ทั้งหมด</string>
+    <string name="category_beach">ชายหาด</string>
+    <string name="category_gastronomy">อาหาร</string>
+    <string name="category_nightlife">ไนท์ไลฟ์</string>
+    <string name="category_shopping">ช้อปปิ้ง</string>
+    <string name="category_culture">วัฒนธรรม</string>
+    <string name="category_service">บริการ</string>
+    <string name="search_placeholder">ค้นหา…</string>
+    <string name="navigate_button">พาฉันไป</string>
+    <string name="booking_title">วางแผนการเดินทาง</string>
+    <string name="flights">เที่ยวบิน</string>
+    <string name="cars">เช่ารถ &amp; มอเตอร์ไซค์</string>
+    <string name="tours">ทัวร์ &amp; กิจกรรม</string>
+    <string name="events_title">ปฏิทินกิจกรรม</string>
+    <string name="weather_title">สภาพอากาศ</string>
+    <string name="offline_mode">โหมดออฟไลน์</string>
+    <string name="no_results">ไม่พบสถานที่</string>
+    <string name="recommendations">แนะนำ</string>
+    <string name="favorites">รายการโปรด</string>
+    <string name="book_now">จองเลย</string>
+    <string name="ad_label">โฆษณา</string>
+</resources>

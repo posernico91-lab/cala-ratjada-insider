@@ -14,6 +14,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.calaratjada.insider.config.ActiveCountryConfig
 import com.calaratjada.insider.ui.theme.*
 
 @Composable
@@ -65,7 +66,7 @@ fun NicknameScreen(
                 Spacer(modifier = Modifier.height(8.dp))
 
                 Text(
-                    text = "Wähle einen Nickname für den\nCala Ratjada Community Chat",
+                    text = "Wähle einen Nickname für den\n${ActiveCountryConfig.primaryCity} Community Chat",
                     fontSize = 14.sp,
                     color = Stone500,
                     textAlign = TextAlign.Center

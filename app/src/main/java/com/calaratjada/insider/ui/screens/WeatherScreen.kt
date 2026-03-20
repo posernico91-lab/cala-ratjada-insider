@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import coil.compose.AsyncImage
+import com.calaratjada.insider.config.ActiveCountryConfig
 import com.calaratjada.insider.ui.theme.*
 import com.calaratjada.insider.ui.components.AdBanner
 import com.calaratjada.insider.ui.viewmodel.WeatherUiState
@@ -49,7 +50,7 @@ fun WeatherScreen(viewModel: WeatherViewModel = hiltViewModel()) {
                         fontWeight = FontWeight.Bold
                     )
                     Text(
-                        text = "Cala Ratjada / Capdepera",
+                        text = ActiveCountryConfig.primaryCity,
                         color = Color.White.copy(alpha = 0.8f),
                         fontSize = 13.sp
                     )

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_home">ホーム</string>
+    <string name="nav_map">地図</string>
+    <string name="nav_search">検索</string>
+    <string name="nav_booking">予約</string>
+    <string name="nav_weather">天気</string>
+    <string name="category_all">すべて</string>
+    <string name="category_beach">ビーチ</string>
+    <string name="category_gastronomy">グルメ</string>
+    <string name="category_nightlife">ナイトライフ</string>
+    <string name="category_shopping">ショッピング</string>
+    <string name="category_culture">文化</string>
+    <string name="category_service">サービス</string>
+    <string name="search_placeholder">検索…</string>
+    <string name="navigate_button">案内する</string>
+    <string name="booking_title">旅行を計画</string>
+    <string name="flights">フライト</string>
+    <string name="cars">レンタカー &amp; バイク</string>
+    <string name="tours">ツアー &amp; アクティビティ</string>
+    <string name="events_title">イベントカレンダー</string>
+    <string name="weather_title">天気</string>
+    <string name="offline_mode">オフラインモード</string>
+    <string name="no_results">場所が見つかりません。</string>
+    <string name="recommendations">おすすめ</string>
+    <string name="favorites">お気に入り</string>
+    <string name="book_now">今すぐ予約</string>
+    <string name="ad_label">広告</string>
+</resources>

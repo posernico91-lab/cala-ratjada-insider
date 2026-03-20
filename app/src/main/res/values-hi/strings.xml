@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_home">होम</string>
+    <string name="nav_map">नक्शा</string>
+    <string name="nav_search">खोज</string>
+    <string name="nav_booking">बुकिंग</string>
+    <string name="nav_weather">मौसम</string>
+    <string name="category_all">सभी</string>
+    <string name="category_beach">समुद्र तट</string>
+    <string name="category_gastronomy">भोजन</string>
+    <string name="category_nightlife">नाइटलाइफ</string>
+    <string name="category_shopping">खरीदारी</string>
+    <string name="category_culture">संस्कृति</string>
+    <string name="category_service">सेवा</string>
+    <string name="search_placeholder">खोजें…</string>
+    <string name="navigate_button">मुझे वहाँ ले जाओ</string>
+    <string name="booking_title">अपनी यात्रा की योजना बनाएं</string>
+    <string name="flights">उड़ानें</string>
+    <string name="cars">कार &amp; बाइक किराया</string>
+    <string name="tours">टूर &amp; गतिविधियाँ</string>
+    <string name="events_title">इवेंट कैलेंडर</string>
+    <string name="weather_title">मौसम</string>
+    <string name="offline_mode">ऑफ़लाइन मोड सक्रिय</string>
+    <string name="no_results">कोई स्थान नहीं मिला।</string>
+    <string name="recommendations">सिफारिशें</string>
+    <string name="favorites">मेरे पसंदीदा</string>
+    <string name="book_now">अभी बुक करें</string>
+    <string name="ad_label">विज्ञापन</string>
+</resources>

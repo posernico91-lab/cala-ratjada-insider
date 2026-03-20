@@ -1,6 +1,7 @@
 package com.calaratjada.insider.data.repository
 
 import com.calaratjada.insider.BuildConfig
+import com.calaratjada.insider.config.ActiveCountryConfig
 import com.calaratjada.insider.data.local.ChatDao
 import com.calaratjada.insider.data.model.*
 import com.calaratjada.insider.data.service.VivoxService
@@ -84,7 +85,7 @@ class ChatRepository @Inject constructor(
                     ChatRoom(
                         id = "hilfe",
                         name = "Hilfe & Info",
-                        description = "Fragen und Hilfe rund um Cala Ratjada",
+                        description = "Fragen und Hilfe rund um ${ActiveCountryConfig.primaryCity}",
                         channelUri = VivoxTokenGenerator.getChannelUri("hilfe")
                     )
                 )

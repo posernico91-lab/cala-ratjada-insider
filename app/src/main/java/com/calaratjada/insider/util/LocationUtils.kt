@@ -1,13 +1,13 @@
 package com.calaratjada.insider.util
 
-import android.location.Location
+import com.calaratjada.insider.config.ActiveCountryConfig
 import kotlin.math.*
 
 object LocationUtils {
 
-    /** Cala Ratjada center coordinates */
-    const val DEFAULT_LAT = 39.7089
-    const val DEFAULT_LNG = 3.4589
+    /** Center coordinates for active country */
+    val DEFAULT_LAT: Double get() = ActiveCountryConfig.lat
+    val DEFAULT_LNG: Double get() = ActiveCountryConfig.lng
 
     /**
      * Calculate distance in km between two coordinates using Haversine formula.

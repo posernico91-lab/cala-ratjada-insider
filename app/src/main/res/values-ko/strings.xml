@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_home">홈</string>
+    <string name="nav_map">지도</string>
+    <string name="nav_search">검색</string>
+    <string name="nav_booking">예약</string>
+    <string name="nav_weather">날씨</string>
+    <string name="category_all">전체</string>
+    <string name="category_beach">해변</string>
+    <string name="category_gastronomy">맛집</string>
+    <string name="category_nightlife">나이트라이프</string>
+    <string name="category_shopping">쇼핑</string>
+    <string name="category_culture">문화</string>
+    <string name="category_service">서비스</string>
+    <string name="search_placeholder">검색…</string>
+    <string name="navigate_button">안내하기</string>
+    <string name="booking_title">여행 계획</string>
+    <string name="flights">항공편</string>
+    <string name="cars">렌터카 &amp; 바이크</string>
+    <string name="tours">투어 &amp; 액티비티</string>
+    <string name="events_title">이벤트 캘린더</string>
+    <string name="weather_title">날씨</string>
+    <string name="offline_mode">오프라인 모드 활성화</string>
+    <string name="no_results">장소를 찾을 수 없습니다.</string>
+    <string name="recommendations">추천</string>
+    <string name="favorites">내 즐겨찾기</string>
+    <string name="book_now">지금 예약</string>
+    <string name="ad_label">광고</string>
+</resources>

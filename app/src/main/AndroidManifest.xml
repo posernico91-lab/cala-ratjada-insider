@@ -22,7 +22,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CalaRatjadaInsider"
         android:networkSecurityConfig="@xml/network_security_config"
-        tools:replace="android:name"
+        tools:replace="android:name,android:fullBackupContent,android:dataExtractionRules"
         tools:targetApi="35">
 
         <!-- FileProvider for secure image sharing -->

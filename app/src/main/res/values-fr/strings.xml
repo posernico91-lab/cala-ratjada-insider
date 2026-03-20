@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_home">Accueil</string>
+    <string name="nav_map">Carte</string>
+    <string name="nav_search">Recherche</string>
+    <string name="nav_booking">Réservation</string>
+    <string name="nav_weather">Météo</string>
+    <string name="category_all">Tout</string>
+    <string name="category_beach">Plages</string>
+    <string name="category_gastronomy">Gastronomie</string>
+    <string name="category_nightlife">Vie nocturne</string>
+    <string name="category_shopping">Shopping</string>
+    <string name="category_culture">Culture</string>
+    <string name="category_service">Service</string>
+    <string name="search_placeholder">Rechercher…</string>
+    <string name="navigate_button">M\'y emmener</string>
+    <string name="booking_title">Planifier votre voyage</string>
+    <string name="flights">Vols</string>
+    <string name="cars">Voitures &amp; Vélos</string>
+    <string name="tours">Tours &amp; Activités</string>
+    <string name="events_title">Calendrier des événements</string>
+    <string name="weather_title">Météo</string>
+    <string name="offline_mode">Mode hors ligne actif</string>
+    <string name="no_results">Aucun lieu trouvé.</string>
+    <string name="recommendations">Recommandations</string>
+    <string name="favorites">Mes favoris</string>
+    <string name="book_now">Réserver</string>
+    <string name="ad_label">Publicité</string>
+</resources>

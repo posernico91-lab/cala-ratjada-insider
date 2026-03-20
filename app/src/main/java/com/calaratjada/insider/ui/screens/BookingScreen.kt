@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.viewinterop.AndroidView
 import com.calaratjada.insider.BuildConfig
+import com.calaratjada.insider.config.ActiveCountryConfig
 import com.calaratjada.insider.ui.theme.*
 
 private enum class BookingTab(
@@ -153,7 +154,7 @@ fun BookingScreen() {
                 )
                 Spacer(modifier = Modifier.height(8.dp))
                 Text(
-                    text = "Vergleiche Preise und buche direkt die besten Angebote für Cala Ratjada.",
+                    text = "Vergleiche Preise und buche direkt die besten Angebote für ${ActiveCountryConfig.primaryCity}.",
                     fontSize = 14.sp,
                     color = Stone500,
                     textAlign = TextAlign.Center

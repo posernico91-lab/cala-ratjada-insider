@@ -21,6 +21,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.calaratjada.insider.R
+import com.calaratjada.insider.config.ActiveCountryConfig
 import com.calaratjada.insider.data.model.Category
 import com.calaratjada.insider.ui.components.AdBanner
 import com.calaratjada.insider.ui.components.CategoryChip
@@ -71,7 +72,7 @@ fun HomeScreen(
                             Spacer(modifier = Modifier.width(12.dp))
                             Column {
                                 Text(
-                                    text = "CALA RATJADA",
+                                    text = ActiveCountryConfig.primaryCity.uppercase(),
                                     fontWeight = FontWeight.Black,
                                     fontSize = 20.sp,
                                     fontStyle = FontStyle.Italic,

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_map">الخريطة</string>
+    <string name="nav_search">بحث</string>
+    <string name="nav_booking">حجز</string>
+    <string name="nav_weather">الطقس</string>
+    <string name="category_all">الكل</string>
+    <string name="category_beach">الشواطئ</string>
+    <string name="category_gastronomy">المطاعم</string>
+    <string name="category_nightlife">الحياة الليلية</string>
+    <string name="category_shopping">التسوق</string>
+    <string name="category_culture">الثقافة</string>
+    <string name="category_service">الخدمات</string>
+    <string name="search_placeholder">بحث…</string>
+    <string name="navigate_button">خذني إلى هناك</string>
+    <string name="booking_title">خطط لرحلتك</string>
+    <string name="flights">الرحلات</string>
+    <string name="cars">تأجير سيارات &amp; دراجات</string>
+    <string name="tours">الجولات &amp; الأنشطة</string>
+    <string name="events_title">تقويم الفعاليات</string>
+    <string name="weather_title">الطقس</string>
+    <string name="offline_mode">وضع عدم الاتصال</string>
+    <string name="no_results">لم يتم العثور على أماكن.</string>
+    <string name="recommendations">التوصيات</string>
+    <string name="favorites">المفضلة</string>
+    <string name="book_now">احجز الآن</string>
+    <string name="ad_label">إعلان</string>
+</resources>

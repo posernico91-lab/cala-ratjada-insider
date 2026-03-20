@@ -56,6 +56,186 @@ android {
         }
     }
 
+    flavorDimensions += "country"
+
+    productFlavors {
+        // 1. DEUTSCHLAND (Master) - Cala Ratjada, Mallorca
+        create("germany") {
+            dimension = "country"
+            applicationId = "com.calaratjada.insider"
+            resValue("string", "app_name", "Cala Ratjada Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"DE\"")
+        }
+        // 2. USA - Miami Beach
+        create("usa") {
+            dimension = "country"
+            applicationId = "com.insider.travel.usa"
+            resValue("string", "app_name", "Miami Beach Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"US\"")
+        }
+        // 3. BRASILIEN - Rio de Janeiro
+        create("brazil") {
+            dimension = "country"
+            applicationId = "com.insider.travel.brazil"
+            resValue("string", "app_name", "Rio Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"BR\"")
+        }
+        // 4. PERU - Cusco
+        create("peru") {
+            dimension = "country"
+            applicationId = "com.insider.travel.peru"
+            resValue("string", "app_name", "Cusco Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"PE\"")
+        }
+        // 5. MEXIKO - Cancún
+        create("mexico") {
+            dimension = "country"
+            applicationId = "com.insider.travel.mexico"
+            resValue("string", "app_name", "Cancún Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"MX\"")
+        }
+        // 6. ENGLAND - London
+        create("uk") {
+            dimension = "country"
+            applicationId = "com.insider.travel.uk"
+            resValue("string", "app_name", "London Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"GB\"")
+        }
+        // 7. ALBANIEN - Sarandë
+        create("albania") {
+            dimension = "country"
+            applicationId = "com.insider.travel.albania"
+            resValue("string", "app_name", "Sarandë Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"AL\"")
+        }
+        // 8. GEORGIEN - Tbilisi
+        create("georgia") {
+            dimension = "country"
+            applicationId = "com.insider.travel.georgia"
+            resValue("string", "app_name", "Tbilisi Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"GE\"")
+        }
+        // 9. SÜDAFRIKA - Cape Town
+        create("southafrica") {
+            dimension = "country"
+            applicationId = "com.insider.travel.southafrica"
+            resValue("string", "app_name", "Cape Town Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"ZA\"")
+        }
+        // 10. NIGERIA - Lagos
+        create("nigeria") {
+            dimension = "country"
+            applicationId = "com.insider.travel.nigeria"
+            resValue("string", "app_name", "Lagos Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"NG\"")
+        }
+        // 11. KENIA - Nairobi
+        create("kenya") {
+            dimension = "country"
+            applicationId = "com.insider.travel.kenya"
+            resValue("string", "app_name", "Nairobi Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"KE\"")
+        }
+        // 12. ÄGYPTEN - Hurghada
+        create("egypt") {
+            dimension = "country"
+            applicationId = "com.insider.travel.egypt"
+            resValue("string", "app_name", "Hurghada Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"EG\"")
+        }
+        // 13. BOTSWANA - Maun
+        create("botswana") {
+            dimension = "country"
+            applicationId = "com.insider.travel.botswana"
+            resValue("string", "app_name", "Maun Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"BW\"")
+        }
+        // 14. KAP VERDE - Santa Maria
+        create("capeverde") {
+            dimension = "country"
+            applicationId = "com.insider.travel.capeverde"
+            resValue("string", "app_name", "Cape Verde Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"CV\"")
+        }
+        // 15. MAROKKO - Marrakech
+        create("morocco") {
+            dimension = "country"
+            applicationId = "com.insider.travel.morocco"
+            resValue("string", "app_name", "Marrakech Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"MA\"")
+        }
+        // 16. TANSANIA - Zanzibar
+        create("tanzania") {
+            dimension = "country"
+            applicationId = "com.insider.travel.tanzania"
+            resValue("string", "app_name", "Zanzibar Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"TZ\"")
+        }
+        // 17. VIETNAM - Ho Chi Minh City
+        create("vietnam") {
+            dimension = "country"
+            applicationId = "com.insider.travel.vietnam"
+            resValue("string", "app_name", "Saigon Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"VN\"")
+        }
+        // 18. BHUTAN - Thimphu
+        create("bhutan") {
+            dimension = "country"
+            applicationId = "com.insider.travel.bhutan"
+            resValue("string", "app_name", "Bhutan Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"BT\"")
+        }
+        // 19. THAILAND - Bangkok
+        create("thailand") {
+            dimension = "country"
+            applicationId = "com.insider.travel.thailand"
+            resValue("string", "app_name", "Bangkok Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"TH\"")
+        }
+        // 20. TADSCHIKISTAN - Dushanbe
+        create("tajikistan") {
+            dimension = "country"
+            applicationId = "com.insider.travel.tajikistan"
+            resValue("string", "app_name", "Dushanbe Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"TJ\"")
+        }
+        // 21. SAUDI-ARABIEN - Jeddah
+        create("saudiarabia") {
+            dimension = "country"
+            applicationId = "com.insider.travel.saudiarabia"
+            resValue("string", "app_name", "Jeddah Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"SA\"")
+        }
+        // 22. DUBAI (UAE)
+        create("dubai") {
+            dimension = "country"
+            applicationId = "com.insider.travel.dubai"
+            resValue("string", "app_name", "Dubai Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"AE\"")
+        }
+        // 23. JAPAN - Tokyo
+        create("japan") {
+            dimension = "country"
+            applicationId = "com.insider.travel.japan"
+            resValue("string", "app_name", "Tokyo Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"JP\"")
+        }
+        // 24. AUSTRALIEN - Sydney
+        create("australia") {
+            dimension = "country"
+            applicationId = "com.insider.travel.australia"
+            resValue("string", "app_name", "Sydney Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"AU\"")
+        }
+        // 25. EUROPA - Barcelona
+        create("europe") {
+            dimension = "country"
+            applicationId = "com.insider.travel.europe"
+            resValue("string", "app_name", "Barcelona Insider")
+            buildConfigField("String", "COUNTRY_CODE", "\"EU\"")
+        }
+    }
+
     buildTypes {
         release {
             isMinifyEnabled = true

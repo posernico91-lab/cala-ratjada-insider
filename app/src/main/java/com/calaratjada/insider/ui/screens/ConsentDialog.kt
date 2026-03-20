@@ -13,6 +13,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.Dialog
 import androidx.compose.ui.window.DialogProperties
+import com.calaratjada.insider.config.ActiveCountryConfig
 import com.calaratjada.insider.ui.theme.*
 
 /**
@@ -51,7 +52,7 @@ fun ConsentDialog(
                     .verticalScroll(rememberScrollState())
             ) {
                 Text(
-                    text = "Willkommen bei Cala Ratjada Insider!",
+                    text = "Willkommen bei ${ActiveCountryConfig.appName}!",
                     fontSize = 20.sp,
                     fontWeight = FontWeight.Bold,
                     color = Stone900

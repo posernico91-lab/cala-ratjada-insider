@@ -38,7 +38,7 @@ object AppModule {
         return Room.databaseBuilder(
             context,
             AppDatabase::class.java,
-            "cala_ratjada_insider.db"
+            "insider_${BuildConfig.COUNTRY_CODE.lowercase()}.db"
         )
             .openHelperFactory(factory)
             .fallbackToDestructiveMigration()
@@ -50,7 +50,7 @@ object AppModule {
      * for SQLCipher database encryption (DSGVO Art. 32).
      */
     private fun getOrCreateDatabaseKey(): ByteArray {
-        val keyAlias = "cala_db_key"
+        val keyAlias = "insider_db_key_${BuildConfig.COUNTRY_CODE.lowercase()}"
         val keyStore = KeyStore.getInstance("AndroidKeyStore")
         keyStore.load(null)
 
@@ -74,7 +74,7 @@ object AppModule {
 
         // Use the key alias as passphrase seed (SQLCipher accepts byte array)
         // The actual encryption key is derived by SQLCipher from this passphrase
-        return (keyAlias + "cala_ratjada_secure_2025").toByteArray(Charsets.UTF_8)
+        return (keyAlias + "insider_secure_2025").toByteArray(Charsets.UTF_8)
     }
 
     @Provides

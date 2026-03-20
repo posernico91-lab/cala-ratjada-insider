@@ -1,6 +1,7 @@
 package com.calaratjada.insider.data.repository
 
 import com.calaratjada.insider.BuildConfig
+import com.calaratjada.insider.config.ActiveCountryConfig
 import com.calaratjada.insider.data.model.ForecastDay
 import com.calaratjada.insider.data.model.WeatherInfo
 import com.calaratjada.insider.data.remote.WeatherApi
@@ -12,7 +13,12 @@ class WeatherRepository @Inject constructor(
     private val weatherApi: WeatherApi
 ) {
     suspend fun getCurrentWeather(): Result<WeatherInfo> = runCatching {
-        val response = weatherApi.getCurrentWeather(apiKey = BuildConfig.WEATHER_API_KEY)
+        val response = weatherApi.getCurrentWeather(
+            lat = ActiveCountryConfig.lat,
+            lon = ActiveCountryConfig.lng,
+            apiKey = BuildConfig.WEATHER_API_KEY,
+            lang = ActiveCountryConfig.defaultLocale.take(2)
+        )
         val weather = response.weather.first()
         WeatherInfo(
             temperature = response.main.temp,
@@ -28,7 +34,12 @@ class WeatherRepository @Inject constructor(
     }
 
     suspend fun getForecast(): Result<List<ForecastDay>> = runCatching {
-        val response = weatherApi.getForecast(apiKey = BuildConfig.WEATHER_API_KEY)
+        val response = weatherApi.getForecast(
+            lat = ActiveCountryConfig.lat,
+            lon = ActiveCountryConfig.lng,
+            apiKey = BuildConfig.WEATHER_API_KEY,
+            lang = ActiveCountryConfig.defaultLocale.take(2)
+        )
         response.list
             .filter { it.dtTxt.contains("12:00:00") }
             .take(5)

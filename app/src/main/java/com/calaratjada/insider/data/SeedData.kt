@@ -1,11 +1,60 @@
 package com.calaratjada.insider.data
 
+import com.calaratjada.insider.config.ActiveCountryConfig
 import com.calaratjada.insider.data.model.Event
 import com.calaratjada.insider.data.model.Poi
 
 object SeedData {
 
-    val pois = listOf(
+    private val categoryImages = mapOf(
+        "beach" to "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80",
+        "gastronomy" to "https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=800&q=80",
+        "nightlife" to "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?auto=format&fit=crop&w=800&q=80",
+        "culture" to "https://images.unsplash.com/photo-1533154683836-84ea7a0bc310?auto=format&fit=crop&w=800&q=80",
+        "nature" to "https://images.unsplash.com/photo-1500049222539-6593a380014e?auto=format&fit=crop&w=800&q=80",
+        "shopping" to "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80",
+        "service" to "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=800&q=80"
+    )
+
+    private val categoryEventDefaults = mapOf(
+        "market" to "market",
+        "music" to "music",
+        "fiesta" to "fiesta"
+    )
+
+    val pois: List<Poi> get() {
+        val config = ActiveCountryConfig.config
+        return config.topPois.mapIndexed { index, poi ->
+            Poi(
+                id = (index + 1).toString(),
+                name = poi.name,
+                category = poi.category,
+                description = poi.description,
+                lat = poi.lat,
+                lng = poi.lng,
+                imageUrl = categoryImages[poi.category] ?: categoryImages["culture"]!!,
+                rating = poi.rating,
+                address = poi.address
+            )
+        }
+    }
+
+    val events: List<Event> get() {
+        val config = ActiveCountryConfig.config
+        return config.topEvents.mapIndexed { index, event ->
+            Event(
+                id = "e${index + 1}",
+                title = event.title,
+                date = "2026-%02d-15".format(event.month),
+                category = if (event.isRecurring) "fiesta" else "music",
+                description = event.description,
+                location = config.primaryCity
+            )
+        }
+    }
+
+    // Legacy hardcoded data kept for germany flavor fallback
+    val legacyPois = listOf(
         Poi(
             id = "1",
             name = "Cala Agulla",
@@ -230,7 +279,7 @@ object SeedData {
         )
     )
 
-    val events = listOf(
+    val legacyEvents = listOf(
         Event(
             id = "e1",
             title = "Wochenmarkt Cala Ratjada",

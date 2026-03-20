@@ -77,7 +77,11 @@ class CoinManager @Inject constructor(
     fun initialize() {
         billingClient = BillingClient.newBuilder(context)
             .setListener(this)
-            .enablePendingPurchases()
+            .enablePendingPurchases(
+                PendingPurchasesParams.newBuilder()
+                    .enableOneTimeProducts()
+                    .build()
+            )
             .build()
 
         billingClient?.startConnection(object : BillingClientStateListener {
@@ -94,19 +98,21 @@ class CoinManager @Inject constructor(
     }
 
     private fun queryProducts() {
-        // Query coin packages (consumable)
-        val productList = COIN_PACKAGES.map { pkg ->
-            QueryProductDetailsParams.Product.newBuilder()
-                .setProductId(pkg.productId)
-                .setProductType(BillingClient.ProductType.INAPP)
+        scope.launch {
+            // Query coin packages (consumable)
+            val productList = COIN_PACKAGES.map { pkg ->
+                QueryProductDetailsParams.Product.newBuilder()
+                    .setProductId(pkg.productId)
+                    .setProductType(BillingClient.ProductType.INAPP)
+                    .build()
+            }
+            val params = QueryProductDetailsParams.newBuilder()
+                .setProductList(productList)
                 .build()
-        }
-        val params = QueryProductDetailsParams.newBuilder()
-            .setProductList(productList)
-            .build()
 
-        billingClient?.queryProductDetailsAsync(params) { result, detailsList ->
-            if (result.responseCode == BillingClient.BillingResponseCode.OK) {
+            val productResult = billingClient?.queryProductDetails(params)
+            if (productResult?.billingResult?.responseCode == BillingClient.BillingResponseCode.OK) {
+                val detailsList = productResult.productDetailsList ?: emptyList()
                 val updatedPackages = COIN_PACKAGES.map { pkg ->
                     val details = detailsList.find { it.productId == pkg.productId }
                     if (details != null) {
@@ -116,20 +122,19 @@ class CoinManager @Inject constructor(
                 }
                 _packages.value = updatedPackages
             }
-        }
 
-        // Query ad-free product (non-consumable)
-        val adFreeList = listOf(
-            QueryProductDetailsParams.Product.newBuilder()
-                .setProductId(PRODUCT_AD_FREE)
-                .setProductType(BillingClient.ProductType.INAPP)
-                .build()
-        )
-        billingClient?.queryProductDetailsAsync(
-            QueryProductDetailsParams.newBuilder().setProductList(adFreeList).build()
-        ) { result, detailsList ->
-            if (result.responseCode == BillingClient.BillingResponseCode.OK) {
-                detailsList.firstOrNull()?.let { details ->
+            // Query ad-free product (non-consumable)
+            val adFreeList = listOf(
+                QueryProductDetailsParams.Product.newBuilder()
+                    .setProductId(PRODUCT_AD_FREE)
+                    .setProductType(BillingClient.ProductType.INAPP)
+                    .build()
+            )
+            val adFreeResult = billingClient?.queryProductDetails(
+                QueryProductDetailsParams.newBuilder().setProductList(adFreeList).build()
+            )
+            if (adFreeResult?.billingResult?.responseCode == BillingClient.BillingResponseCode.OK) {
+                adFreeResult.productDetailsList?.firstOrNull()?.let { details ->
                     adFreeProductDetails = details
                     details.oneTimePurchaseOfferDetails?.formattedPrice?.let {
                         _adFreePriceLabel.value = it
@@ -143,13 +148,14 @@ class CoinManager @Inject constructor(
      * Restore ad-free purchase on app restart
      */
     private fun restoreAdFreePurchase() {
-        billingClient?.queryPurchasesAsync(
-            QueryPurchasesParams.newBuilder()
-                .setProductType(BillingClient.ProductType.INAPP)
-                .build()
-        ) { result, purchases ->
-            if (result.responseCode == BillingClient.BillingResponseCode.OK) {
-                val adFreePurchase = purchases.find {
+        scope.launch {
+            val purchasesResult = billingClient?.queryPurchasesAsync(
+                QueryPurchasesParams.newBuilder()
+                    .setProductType(BillingClient.ProductType.INAPP)
+                    .build()
+            )
+            if (purchasesResult?.billingResult?.responseCode == BillingClient.BillingResponseCode.OK) {
+                val adFreePurchase = purchasesResult.purchasesList.find {
                     it.products.contains(PRODUCT_AD_FREE) &&
                     it.purchaseState == Purchase.PurchaseState.PURCHASED
                 }
