@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!-- Backup rules: Exclude sensitive data from cloud backup (DSGVO Art. 32) -->
-<full-backup-content>
-    <exclude domain="sharedpref" path="chat_prefs.preferences_pb" />
-    <exclude domain="sharedpref" path="ad_prefs.preferences_pb" />
-    <exclude domain="sharedpref" path="secure_prefs.xml" />
-    <exclude domain="database" path="." />
-    <exclude domain="file" path="profile_pictures/" />
-</full-backup-content>
